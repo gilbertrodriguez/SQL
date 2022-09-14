@@ -1,0 +1,28 @@
+--Create a store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity integer, minimum integer);
+
+insert into store values (1, "couch", 300, 3, 2);
+insert into store values (2, "love seat", 200, 5, 3);
+insert into store values (3, "rug", 50, 10, 6);
+insert into store values (4, "coffee table", 100, 12, 10);
+insert into store values (5, "end table", 20, 40, 15);
+insert into store values (6, "tv stand", 150, 30, 20);
+insert into store values (7, "tv", 1000, 34, 15);
+insert into store values (8, "table", 500, 23, 20);
+insert into store values (9, "chairs", 30, 60, 50);
+insert into store values (10, "recliner", 400, 100, 250);
+insert into store values (11, "bed", 800, 100, 75);
+insert into store values (12, "dresser", 350, 40, 40);
+insert into store values (13, "night stand", 100, 200, 150);
+insert into store values (14, "mirror", 75, 100, 80);
+insert into store values (15, "lamp", 50, 34, 25);
+
+--display the database ordered by price. 
+select * from store order by price;
+
+--what is the total inventory in the store? 
+select id, sum (quantity) from store;
+
+--what are the most 5 expensive items?
+select id, item, price from store order by price desc limit 5;
